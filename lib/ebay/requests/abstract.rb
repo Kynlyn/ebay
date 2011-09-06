@@ -30,6 +30,7 @@ module Ebay # :nodoc:
       text_node :output_selector, 'OutputSelector', :optional => true
       text_node :warning_level, 'WarningLevel', :optional => true
       object_node :bot_block, 'BotBlock', :class => BotBlockRequest, :optional => true
+      
       # eBay specifies the detail level as a collection.  The usual case is to use
       # only a single detail level, so it is more appropriate to add an accessor for 
       # the normal case.
@@ -42,6 +43,10 @@ module Ebay # :nodoc:
       # value passed in as an argument
       def detail_level=(value)
         @detail_levels = Array(value)
+      end
+      
+      def requester_credentials
+        XMLRequesterCredentials.new(:ebay_auth_token => auth_token)
       end
     end
   end

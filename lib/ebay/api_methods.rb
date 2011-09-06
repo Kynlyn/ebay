@@ -17,14 +17,6 @@ module Ebay
     def add_dispute_response(params = {})
       commit(Ebay::Requests::AddDisputeResponse, params)
     end
-    # Builds Ebay::Requests#AddFixedPriceItem
-    #
-    # Returns Ebay::Responses#AddFixedPriceItem
-    #
-    # Official Documentation for AddFixedPriceItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_AddFixedPriceItem.html]
-    def add_fixed_price_item(params = {})
-      commit(Ebay::Requests::AddFixedPriceItem, params)
-    end
     # Builds Ebay::Requests#AddItem
     #
     # Returns Ebay::Responses#AddItem
@@ -200,22 +192,6 @@ module Ebay
     # Official Documentation for DeleteSellingManagerTemplateAutomationRule[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_DeleteSellingManagerTemplateAutomationRule.html]
     def delete_selling_manager_template_automation_rule(params = {})
       commit(Ebay::Requests::DeleteSellingManagerTemplateAutomationRule, params)
-    end
-    # Builds Ebay::Requests#DisableUnpaidItemAssistance
-    #
-    # Returns Ebay::Responses#DisableUnpaidItemAssistance
-    #
-    # Official Documentation for DisableUnpaidItemAssistance[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_DisableUnpaidItemAssistance.html]
-    def disable_unpaid_item_assistance(params = {})
-      commit(Ebay::Requests::DisableUnpaidItemAssistance, params)
-    end
-    # Builds Ebay::Requests#EndFixedPriceItem
-    #
-    # Returns Ebay::Responses#EndFixedPriceItem
-    #
-    # Official Documentation for EndFixedPriceItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_EndFixedPriceItem.html]
-    def end_fixed_price_item(params = {})
-      commit(Ebay::Requests::EndFixedPriceItem, params)
     end
     # Builds Ebay::Requests#EndItem
     #
@@ -953,14 +929,6 @@ module Ebay
     def place_offer(params = {})
       commit(Ebay::Requests::PlaceOffer, params)
     end
-    # Builds Ebay::Requests#RelistFixedPriceItem
-    #
-    # Returns Ebay::Responses#RelistFixedPriceItem
-    #
-    # Official Documentation for RelistFixedPriceItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_RelistFixedPriceItem.html]
-    def relist_fixed_price_item(params = {})
-      commit(Ebay::Requests::RelistFixedPriceItem, params)
-    end
     # Builds Ebay::Requests#RelistItem
     #
     # Returns Ebay::Responses#RelistItem
@@ -1008,14 +976,6 @@ module Ebay
     # Official Documentation for ReviseCheckoutStatus[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ReviseCheckoutStatus.html]
     def revise_checkout_status(params = {})
       commit(Ebay::Requests::ReviseCheckoutStatus, params)
-    end
-    # Builds Ebay::Requests#ReviseFixedPriceItem
-    #
-    # Returns Ebay::Responses#ReviseFixedPriceItem
-    #
-    # Official Documentation for ReviseFixedPriceItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_ReviseFixedPriceItem.html]
-    def revise_fixed_price_item(params = {})
-      commit(Ebay::Requests::ReviseFixedPriceItem, params)
     end
     # Builds Ebay::Requests#ReviseInventoryStatus
     #
@@ -1273,14 +1233,6 @@ module Ebay
     def vero_report_items(params = {})
       commit(Ebay::Requests::VeROReportItems, params)
     end
-    # Builds Ebay::Requests#VerifyAddFixedPriceItem
-    #
-    # Returns Ebay::Responses#VerifyAddFixedPriceItem
-    #
-    # Official Documentation for VerifyAddFixedPriceItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_VerifyAddFixedPriceItem.html]
-    def verify_add_fixed_price_item(params = {})
-      commit(Ebay::Requests::VerifyAddFixedPriceItem, params)
-    end
     # Builds Ebay::Requests#VerifyAddItem
     #
     # Returns Ebay::Responses#VerifyAddItem
@@ -1296,14 +1248,6 @@ module Ebay
     # Official Documentation for VerifyAddSecondChanceItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_VerifyAddSecondChanceItem.html]
     def verify_add_second_chance_item(params = {})
       commit(Ebay::Requests::VerifyAddSecondChanceItem, params)
-    end
-    # Builds Ebay::Requests#VerifyRelistItem
-    #
-    # Returns Ebay::Responses#VerifyRelistItem
-    #
-    # Official Documentation for VerifyRelistItem[http://developer.ebay.com/DevZone/XML/docs/Reference/eBay/io_VerifyRelistItem.html]
-    def verify_relist_item(params = {})
-      commit(Ebay::Requests::VerifyRelistItem, params)
     end
   end
 end

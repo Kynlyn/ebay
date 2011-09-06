@@ -7,7 +7,6 @@ require 'ebay/types/insurance_details'
 require 'ebay/types/flat_shipping_discount'
 require 'ebay/types/calculated_shipping_discount'
 require 'ebay/types/promotional_shipping_discount_details'
-require 'ebay/types/shipment_tracking_details'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -31,6 +30,7 @@ module Ebay # :nodoc:
     #  boolean_node :third_party_checkout, 'ThirdPartyCheckout', 'true', 'false', :optional => true
     #  array_node :tax_tables, 'TaxTable', 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
     #  boolean_node :get_it_fast, 'GetItFast', 'true', 'false', :optional => true
+    #  text_node :shipment_tracking_number, 'ShipmentTrackingNumber', :optional => true
     #  text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
     #  money_node :default_shipping_cost, 'DefaultShippingCost', :optional => true
     #  object_node :insurance_details, 'InsuranceDetails', :class => InsuranceDetails, :optional => true
@@ -45,9 +45,6 @@ module Ebay # :nodoc:
     #  boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
     #  object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
     #  money_node :cod_cost, 'CODCost', :optional => true
-    #  text_node :exclude_ship_to_location, 'ExcludeShipToLocation', :optional => true
-    #  boolean_node :seller_exclude_ship_to_locations_preference, 'SellerExcludeShipToLocationsPreference', 'true', 'false', :optional => true
-    #  array_node :shipment_tracking_details, 'ShipmentTrackingDetails', :class => ShipmentTrackingDetails, :default_value => []
     class ShippingDetails
       include XML::Mapping
       include Initializer
@@ -71,6 +68,7 @@ module Ebay # :nodoc:
       boolean_node :third_party_checkout, 'ThirdPartyCheckout', 'true', 'false', :optional => true
       array_node :tax_tables, 'TaxTable', 'TaxJurisdiction', :class => TaxJurisdiction, :default_value => []
       boolean_node :get_it_fast, 'GetItFast', 'true', 'false', :optional => true
+      text_node :shipment_tracking_number, 'ShipmentTrackingNumber', :optional => true
       text_node :shipping_service_used, 'ShippingServiceUsed', :optional => true
       money_node :default_shipping_cost, 'DefaultShippingCost', :optional => true
       object_node :insurance_details, 'InsuranceDetails', :class => InsuranceDetails, :optional => true
@@ -85,9 +83,6 @@ module Ebay # :nodoc:
       boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
       object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
       money_node :cod_cost, 'CODCost', :optional => true
-      text_node :exclude_ship_to_location, 'ExcludeShipToLocation', :optional => true
-      boolean_node :seller_exclude_ship_to_locations_preference, 'SellerExcludeShipToLocationsPreference', 'true', 'false', :optional => true
-      array_node :shipment_tracking_details, 'ShipmentTrackingDetails', :class => ShipmentTrackingDetails, :default_value => []
     end
   end
 end

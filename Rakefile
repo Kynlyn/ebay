@@ -56,17 +56,17 @@ namespace :schema do
   task :update_version do
     schema = File.dirname(__FILE__) + '/lib/ebay/schema/ebaySvc.xsd'
     # Update the schema version string
-    
-    File.read(schema) =~ /Version (\d+)/m
-    if version = $1
-      version_file_path = File.dirname(__FILE__) + "/lib/ebay/schema/version.rb"
-      version_file = File.read(version_file_path)
-      version_file.gsub!(/VERSION = \d+/, "VERSION = #{version}")
-      File.open(version_file_path, 'w') do |f|
-        f.puts version_file
-      end
-    else
-      raise "Unable to parse the version from the schema"
+    version = File.open(schema) do |f|
+      version_string = f.gets
+      version_string.match(/Version (\d+)/)
+      $1
+    end
+
+    version_file_path = File.dirname(__FILE__) + "/lib/ebay/schema/version.rb"
+    version_file = File.read(version_file_path)
+    version_file.gsub!(/VERSION = \d+/, "VERSION = #{version}")
+    File.open(version_file_path, 'w') do |f|
+      f.puts version_file
     end
   end
   
@@ -114,8 +114,8 @@ spec = Gem::Specification.new do |s|
   s.author = "Cody Fauser"
   s.email = "codyfauser@gmail.com"
   s.homepage = "http://ebayapi.rubyforge.org"
-  s.add_dependency('xml-mapping', '>= 0.8.1')
-  s.add_dependency('money', '= 1.7.1')
+  s.add_dependency('xml-mapping', '= 0.8.1')
+  s.add_dependency('money', '= 3.7.1')
 end
 
 Rake::GemPackageTask.new(spec) do |p|
@@ -134,6 +134,7 @@ task :publish => [ :package ] do
   packages = %w( gem tgz zip ).collect{ |ext| "pkg/#{PKG_NAME}-#{PKG_VERSION}.#{ext}" }
   
   rubyforge = RubyForge.new
+  rubyforge.configure
   rubyforge.login
   rubyforge.add_release(PKG_NAME, PKG_NAME, "REL #{PKG_VERSION}", *packages)
 end

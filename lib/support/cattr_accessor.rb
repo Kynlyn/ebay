@@ -1,23 +1,24 @@
-# Extends the class object with class and instance accessors for class attributes, 
-# just like the native attr* accessors for instance attributes.
+#Extends the class object with class and instance accessors for class attributes, 
+#just like the native attr* accessors for instance attributes.
 class Class # :nodoc:
   def cattr_reader(*syms)
     syms.each do |sym|
+      next if sym.is_a?(Hash)
       class_eval <<-EOS
-        if ! defined? @@#{sym.to_s}
-          @@#{sym.to_s} = nil
+        if ! defined? @@#{sym.id2name}
+          @@#{sym.id2name} = nil
         end
         
-        def self.#{sym.to_s}
+        def self.#{sym.id2name}
           @@#{sym}
         end
 
-        def #{sym.to_s}
+        def #{sym.id2name}
           @@#{sym}
         end
 
-        def call_#{sym.to_s}
-          case @@#{sym.to_s}
+        def call_#{sym.id2name}
+          case @@#{sym.id2name}
             when Symbol then send(@@#{sym})
             when Proc   then @@#{sym}.call(self)
             when String then @@#{sym}
@@ -26,32 +27,33 @@ class Class # :nodoc:
         end
       EOS
     end
-  end unless respond_to?(:cattr_reader)
+  end
   
   def cattr_writer(*syms)
     syms.each do |sym|
+      next if sym.is_a?(Hash)
       class_eval <<-EOS
-        if ! defined? @@#{sym.to_s}
-          @@#{sym.to_s} = nil
+        if ! defined? @@#{sym.id2name}
+          @@#{sym.id2name} = nil
         end
         
-        def self.#{sym.to_s}=(obj)
-          @@#{sym.to_s} = obj
+        def self.#{sym.id2name}=(obj)
+          @@#{sym.id2name} = obj
         end
 
-        def self.set_#{sym.to_s}(obj)
-          @@#{sym.to_s} = obj
+        def self.set_#{sym.id2name}(obj)
+          @@#{sym.id2name} = obj
         end
 
-        def #{sym.to_s}=(obj)
+        def #{sym.id2name}=(obj)
           @@#{sym} = obj
         end
       EOS
     end
-  end unless respond_to?(:cattr_writer)
+  end
   
   def cattr_accessor(*syms)
     cattr_reader(*syms)
     cattr_writer(*syms)
-  end unless respond_to?(:cattr_accessor)
+  end
 end

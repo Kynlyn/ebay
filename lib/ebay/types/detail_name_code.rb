@@ -21,10 +21,6 @@ module Ebay # :nodoc:
       ShippingCarrierDetails = 'ShippingCarrierDetails'
       ListingStartPriceDetails = 'ListingStartPriceDetails'
       ReturnPolicyDetails = 'ReturnPolicyDetails'
-      BuyerRequirementDetails = 'BuyerRequirementDetails'
-      ListingFeatureDetails = 'ListingFeatureDetails'
-      VariationDetails = 'VariationDetails'
-      ExcludeShippingLocationDetails = 'ExcludeShippingLocationDetails'
     end
   end
 end

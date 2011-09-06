@@ -9,7 +9,6 @@ module Ebay # :nodoc:
     #  numeric_node :duration_in_days, 'DurationInDays', :optional => true
     #  boolean_node :include_notes, 'IncludeNotes', 'true', 'false', :optional => true
     #  object_node :pagination, 'Pagination', :class => Pagination, :optional => true
-    #  text_node :order_status_filter, 'OrderStatusFilter', :optional => true
     class ItemListCustomization
       include XML::Mapping
       include Initializer
@@ -20,7 +19,6 @@ module Ebay # :nodoc:
       numeric_node :duration_in_days, 'DurationInDays', :optional => true
       boolean_node :include_notes, 'IncludeNotes', 'true', 'false', :optional => true
       object_node :pagination, 'Pagination', :class => Pagination, :optional => true
-      text_node :order_status_filter, 'OrderStatusFilter', :optional => true
     end
   end
 end

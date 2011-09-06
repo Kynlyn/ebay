@@ -3,8 +3,7 @@ require 'ebay/types/sifftas_recommendations'
 require 'ebay/types/pricing_recommendations'
 require 'ebay/types/attribute_recommendations'
 require 'ebay/types/product_info'
-require 'ebay/types/recommendations'
-require 'ebay/types/product_listing_details'
+require 'ebay/types/item_specifics_recommendations'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -15,9 +14,7 @@ module Ebay # :nodoc:
     #  object_node :attribute_recommendations, 'AttributeRecommendations', :class => AttributeRecommendations, :optional => true
     #  array_node :product_recommendations, 'ProductRecommendations', 'Product', :class => ProductInfo, :default_value => []
     #  text_node :correlation_id, 'CorrelationID', :optional => true
-    #  object_node :recommendations, 'Recommendations', :class => Recommendations, :optional => true
-    #  object_node :product_listing_details, 'ProductListingDetails', :class => ProductListingDetails, :optional => true
-    #  text_node :title, 'Title', :optional => true
+    #  object_node :item_specifics_recommendations, 'ItemSpecificsRecommendations', :class => ItemSpecificsRecommendations, :optional => true
     class GetRecommendationsResponseContainer
       include XML::Mapping
       include Initializer
@@ -28,9 +25,7 @@ module Ebay # :nodoc:
       object_node :attribute_recommendations, 'AttributeRecommendations', :class => AttributeRecommendations, :optional => true
       array_node :product_recommendations, 'ProductRecommendations', 'Product', :class => ProductInfo, :default_value => []
       text_node :correlation_id, 'CorrelationID', :optional => true
-      object_node :recommendations, 'Recommendations', :class => Recommendations, :optional => true
-      object_node :product_listing_details, 'ProductListingDetails', :class => ProductListingDetails, :optional => true
-      text_node :title, 'Title', :optional => true
+      object_node :item_specifics_recommendations, 'ItemSpecificsRecommendations', :class => ItemSpecificsRecommendations, :optional => true
     end
   end
 end

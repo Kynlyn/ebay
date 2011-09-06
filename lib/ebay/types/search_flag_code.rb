@@ -13,7 +13,6 @@ module Ebay # :nodoc:
       GetItFast = 'GetItFast'
       Lot = 'Lot'
       GermanMotorsSearchable = 'GermanMotorsSearchable'
-      WorldOfGood = 'WorldOfGood'
       DigitalDelivery = 'DigitalDelivery'
     end
   end

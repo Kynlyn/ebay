@@ -98,13 +98,6 @@ module Ebay # :nodoc:
       Group1MaxFlatShippingCost = 'Group1MaxFlatShippingCost'
       Group2MaxFlatShippingCost = 'Group2MaxFlatShippingCost'
       Group3MaxFlatShippingCost = 'Group3MaxFlatShippingCost'
-      VariationsEnabled = 'VariationsEnabled'
-      AttributeConversionEnabled = 'AttributeConversionEnabled'
-      FreeGalleryPlusEnabled = 'FreeGalleryPlusEnabled'
-      FreePicturePackEnabled = 'FreePicturePackEnabled'
-      CompatibilityEnabled = 'CompatibilityEnabled'
-      MinCompatibleApplications = 'MinCompatibleApplications'
-      MaxCompatibleApplications = 'MaxCompatibleApplications'
     end
   end
 end

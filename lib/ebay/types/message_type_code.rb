@@ -11,7 +11,6 @@ module Ebay # :nodoc:
       ContacteBayMemberViaCommunityLink = 'ContacteBayMemberViaCommunityLink'
       All = 'All'
       ContactMyBidder = 'ContactMyBidder'
-      ContacteBayMemberViaAnonymousEmail = 'ContacteBayMemberViaAnonymousEmail'
     end
   end
 end

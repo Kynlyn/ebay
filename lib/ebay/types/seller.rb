@@ -2,7 +2,7 @@ require 'ebay/types/address'
 require 'ebay/types/scheduling_info'
 require 'ebay/types/pro_stores_checkout_preference'
 require 'ebay/types/charity_affiliation_detail'
-require 'ebay/types/feature_eligibility'
+require 'ebay/types/integrated_merchant_credit_card_info'
 
 module Ebay # :nodoc:
   module Types # :nodoc:
@@ -31,10 +31,7 @@ module Ebay # :nodoc:
     #  numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
     #  array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
     #  numeric_node :transaction_percent, 'TransactionPercent', :optional => true
-    #  value_array_node :integrated_merchant_credit_card_infos, 'IntegratedMerchantCreditCardInfo', 'SupportedSite', :default_value => []
-    #  object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
-    #  boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
-    #  value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+    #  object_node :integrated_merchant_credit_card_info, 'IntegratedMerchantCreditCardInfo', :class => IntegratedMerchantCreditCardInfo, :optional => true
     class Seller
       include XML::Mapping
       include Initializer
@@ -63,10 +60,7 @@ module Ebay # :nodoc:
       numeric_node :paisa_pay_escrow_emi_status, 'PaisaPayEscrowEMIStatus', :optional => true
       array_node :charity_affiliation_details, 'CharityAffiliationDetails', 'CharityAffiliationDetail', :class => CharityAffiliationDetail, :default_value => []
       numeric_node :transaction_percent, 'TransactionPercent', :optional => true
-      value_array_node :integrated_merchant_credit_card_infos, 'IntegratedMerchantCreditCardInfo', 'SupportedSite', :default_value => []
-      object_node :feature_eligibility, 'FeatureEligibility', :class => FeatureEligibility, :optional => true
-      boolean_node :top_rated_seller, 'TopRatedSeller', 'true', 'false', :optional => true
-      value_array_node :top_rated_seller_details, 'TopRatedSellerDetails', 'TopRatedProgram', :default_value => []
+      object_node :integrated_merchant_credit_card_info, 'IntegratedMerchantCreditCardInfo', :class => IntegratedMerchantCreditCardInfo, :optional => true
     end
   end
 end

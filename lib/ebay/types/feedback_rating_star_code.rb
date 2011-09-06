@@ -14,8 +14,6 @@ module Ebay # :nodoc:
       TurquoiseShooting = 'TurquoiseShooting'
       PurpleShooting = 'PurpleShooting'
       RedShooting = 'RedShooting'
-      GreenShooting = 'GreenShooting'
-      SilverShooting = 'SilverShooting'
     end
   end
 end

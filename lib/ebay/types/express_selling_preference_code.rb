@@ -1,10 +1,11 @@
 module Ebay # :nodoc:
   module Types # :nodoc:
-    class BoldTitleCode
+    class ExpressSellingPreferenceCode
       extend Enumerable
       extend Enumeration
-      Enabled = 'Enabled'
-      Disabled = 'Disabled'
+      All = 'All'
+      ExpressOnly = 'ExpressOnly'
+      OptOut = 'OptOut'
     end
   end
 end

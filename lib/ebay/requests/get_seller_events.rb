@@ -11,7 +11,6 @@ module Ebay # :nodoc:
     #  time_node :mod_time_to, 'ModTimeTo', :optional => true
     #  boolean_node :new_item_filter, 'NewItemFilter', 'true', 'false', :optional => true
     #  boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
-    #  boolean_node :include_variation_specifics, 'IncludeVariationSpecifics', 'true', 'false', :optional => true
     class GetSellerEvents < Abstract
       include XML::Mapping
       include Initializer
@@ -25,7 +24,6 @@ module Ebay # :nodoc:
       time_node :mod_time_to, 'ModTimeTo', :optional => true
       boolean_node :new_item_filter, 'NewItemFilter', 'true', 'false', :optional => true
       boolean_node :include_watch_count, 'IncludeWatchCount', 'true', 'false', :optional => true
-      boolean_node :include_variation_specifics, 'IncludeVariationSpecifics', 'true', 'false', :optional => true
     end
   end
 end
