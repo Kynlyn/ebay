@@ -1,3 +1,5 @@
+require 'httparty'
+
 module Ebay
   class Finding
     SERVICE_VERSION="1.0.0"
