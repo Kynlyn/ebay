@@ -29,6 +29,9 @@ module Ebay # :nodoc:
       Sweden = 'Sweden'
       CanadaFrench = 'CanadaFrench'
     end
+    
+    EBAY_US=0
+    EBAY_MOTORS=100
   end
 end
 
