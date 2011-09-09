@@ -33,3 +33,4 @@ end
 
 require 'ebay/api'
 require 'ebay/notification'
+require 'ebay/finding'
