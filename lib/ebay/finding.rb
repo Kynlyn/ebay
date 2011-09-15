@@ -41,7 +41,7 @@ module Ebay
     def self.clean_hash(h)
     	h.each_key do |k|
     		if h[k].is_a?(Array) && h[k].first.is_a?(Hash) 
-    		  h[k].each_index {|index|flatten_hash(h[k][index])}
+    		  h[k].each_index {|index|Finding.clean_hash(h[k][index])}
     		end
     		if h[k].is_a?(Array) && h[k].count==1
     		  h[k]=h[k].first 
