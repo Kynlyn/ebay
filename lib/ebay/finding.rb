@@ -41,7 +41,7 @@ module Ebay
     def self.clean_hash(h,exceptions)
     	h.each_key do |k|
     		if h[k].is_a?(Array) && h[k].first.is_a?(Hash) 
-    		  h[k].each_index {|index|Finding.clean_hash(h[k][index]),exceptions}
+    		  h[k].each_index {|index|Finding.clean_hash(h[k][index],exceptions)}
     		end
     		if h[k].is_a?(Array) && h[k].count==1 && !exceptions.include?(k.to_s)
     		  h[k]=h[k].first 
