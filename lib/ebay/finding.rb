@@ -31,19 +31,19 @@ module Ebay
         total_pages=Integer(response["paginationOutput"][0]["totalPages"].first)
         page_number=Integer(response["paginationOutput"][0]["pageNumber"].first)
       end
-      Finding.clean_hash({:ack=>ack,:message=>message,:items=>items,:total_pages=>total_pages,:page_number=>page_number})
+      Finding.clean_hash({:ack=>ack,:message=>message,:items=>items,:total_pages=>total_pages,:page_number=>page_number},["items"])
     end
     
     def self.build_call(params)
       "&SECURITY-APPNAME=#{Ebay::Api.app_id}&GLOBAL-ID=#{params[:global_id]}&OPERATION-NAME=#{params[:call_name]}&paginationInput.pageNumber=#{params[:page_number]}"
     end
     
-    def self.clean_hash(h)
+    def self.clean_hash(h,exceptions)
     	h.each_key do |k|
     		if h[k].is_a?(Array) && h[k].first.is_a?(Hash) 
-    		  h[k].each_index {|index|Finding.clean_hash(h[k][index])}
+    		  h[k].each_index {|index|Finding.clean_hash(h[k][index]),exceptions}
     		end
-    		if h[k].is_a?(Array) && h[k].count==1
+    		if h[k].is_a?(Array) && h[k].count==1 && !exceptions.include?(k.to_s)
     		  h[k]=h[k].first 
     		end
     	end
