@@ -35,7 +35,7 @@ module Ebay
     end
     
     def self.build_call(params)
-      "&SECURITY-APPNAME=#{Ebay::Api.app_id}&GLOBAL-ID=#{params[:global_id]}&OPERATION-NAME=#{params[:call_name]}&paginationInput.pageNumber=#{params[:page_number]}"
+      "&SECURITY-APPNAME=#{Ebay::Api.app_id}&GLOBAL-ID=#{params[:global_id]}&OPERATION-NAME=#{params[:call_name]}&paginationInput.pageNumber=#{params[:page_number]}&itemFilter(0).name=ListingType&itemFilter(0).value(0)=All"
     end
     
     def self.clean_hash(h,exceptions)
