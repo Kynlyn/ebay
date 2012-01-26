@@ -264,6 +264,10 @@ module Ebay # :nodoc:
       text_node :inventory_tracking_method, 'InventoryTrackingMethod', :optional => true
       boolean_node :integrated_merchant_credit_card_enabled, 'IntegratedMerchantCreditCardEnabled', 'true', 'false', :optional => true
       text_node :seller_provided_title, "SellerProvidedTitle",:optional => true
+      text_node :vin,"VIN",:optional => true
+      text_node :vin_link,"VINLink",:optional => true
+      text_node :vrm,"VRM",:optional => true
+      text_node :vrm_link,"VRMLink",:optional => true
     end
   end
 end
