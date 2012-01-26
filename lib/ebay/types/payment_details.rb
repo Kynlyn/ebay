@@ -10,6 +10,7 @@ module Ebay # :nodoc:
       root_element_name 'PaymentDetails'
       numeric_node :hours_to_deposit, 'HoursToDeposit', :optional => true
       numeric_node :days_to_full_payment, 'DaysToFullPayment', :optional => true
+      numeric_node :deposit_amount,"DepositAmount",:optional => true
     end
   end
 end
