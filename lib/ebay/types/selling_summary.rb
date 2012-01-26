@@ -20,7 +20,7 @@ module Ebay # :nodoc:
       numeric_node :total_sold_count, 'TotalSoldCount', :optional => true
       money_node :total_sold_value, 'TotalSoldValue', :optional => true
       numeric_node :sold_duration_in_days, 'SoldDurationInDays', :optional => true
-      boolean_node :sold_as_bin, 'SoldAsBin',:optional => true
+      boolean_node :sold_as_bin, 'SoldAsBin','true', 'false', :optional => true
     end
   end
 end
