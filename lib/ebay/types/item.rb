@@ -267,8 +267,8 @@ module Ebay # :nodoc:
       text_node :vin_link,"VINLink",:optional => true
       text_node :vrm,"VRM",:optional => true
       text_node :vrm_link,"VRMLink",:optional => true
-      boolean_node :category_based_attributes_prefill, "CategoryBasedAttributesPrefill",:optional => true
-      boolean_node :category_mapping_allowed,"CategoryMappingAllowed",:optional => true
+      boolean_node :category_based_attributes_prefill, "CategoryBasedAttributesPrefill",'true','false':optional => true
+      boolean_node :category_mapping_allowed,"CategoryMappingAllowed",'true','false',:optional => true
       numeric_node :condition_id,"ConditionId",:optional => true
     end
   end
