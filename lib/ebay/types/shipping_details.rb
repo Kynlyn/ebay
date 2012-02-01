@@ -83,6 +83,7 @@ module Ebay # :nodoc:
       boolean_node :international_promotional_shipping_discount, 'InternationalPromotionalShippingDiscount', 'true', 'false', :optional => true
       object_node :promotional_shipping_discount_details, 'PromotionalShippingDiscountDetails', :class => PromotionalShippingDiscountDetails, :optional => true
       money_node :cod_cost, 'CODCost', :optional => true
+      boolean_node :seller_exclude_ship_to_locations_preference, 'SellerExcludeShipToLocationsPreference','true','false',:optional => true
     end
   end
 end
