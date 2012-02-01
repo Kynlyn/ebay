@@ -153,6 +153,7 @@ module Ebay #:nodoc:
       result << REXML::XMLDecl.new('1.0', 'UTF-8')
       result << request.save_to_xml
       result.root.add_namespace XmlNs
+      p result.to_s
       result.to_s
     end
 
