@@ -177,7 +177,7 @@ module Ebay # :nodoc:
       text_node :listing_duration, 'ListingDuration', :optional => true
       value_array_node :listing_enhancements, 'ListingEnhancement', :default_value => []
       text_node :listing_type, 'ListingType', :optional => true
-      text_node :listing_subtype, 'ListingSubtype', :optional => true
+      text_node :listing_subtype2, 'ListingSubtype', :optional => true
       text_node :location, 'Location', :optional => true
       numeric_node :lot_size, 'LotSize', :optional => true
       text_node :partner_code, 'PartnerCode', :optional => true
