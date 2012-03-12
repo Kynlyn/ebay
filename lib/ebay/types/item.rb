@@ -177,6 +177,7 @@ module Ebay # :nodoc:
       text_node :listing_duration, 'ListingDuration', :optional => true
       value_array_node :listing_enhancements, 'ListingEnhancement', :default_value => []
       text_node :listing_type, 'ListingType', :optional => true
+      text_node :listing_subtype, 'ListingSubtype', :optional => true
       text_node :location, 'Location', :optional => true
       numeric_node :lot_size, 'LotSize', :optional => true
       text_node :partner_code, 'PartnerCode', :optional => true
@@ -249,7 +250,6 @@ module Ebay # :nodoc:
       money_node :classified_ad_pay_per_lead_fee, 'ClassifiedAdPayPerLeadFee', :optional => true
       boolean_node :bid_group_item, 'BidGroupItem', 'true', 'false', :optional => true
       object_node :apply_buyer_protection, 'ApplyBuyerProtection', :class => BuyerProtectionDetails, :optional => true
-      text_node :listing_subtype, 'ListingSubtype', :optional => true
       boolean_node :mechanical_check_accepted, 'MechanicalCheckAccepted', 'true', 'false', :optional => true
       boolean_node :update_seller_info, 'UpdateSellerInfo', 'true', 'false', :optional => true
       boolean_node :update_return_policy, 'UpdateReturnPolicy', 'true', 'false', :optional => true
