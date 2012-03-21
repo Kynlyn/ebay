@@ -122,9 +122,7 @@ module Ebay #:nodoc:
       
       request = request_class.new(params)
       yield request if block_given?
-      response=invoke(request, format)
-      p response
-      response
+      invoke(request, format)
     end
     
     def invoke(request, format)
@@ -182,6 +180,7 @@ module Ebay #:nodoc:
         # Fixes the wrong case of API returned by eBay
         fix_root_element_name(xml)
         result = XML::Mapping.load_object_from_xml(xml.root)
+        p xml.to_s
         case result.ack
         when Ebay::Types::AckCode::Failure, Ebay::Types::AckCode::PartialFailure
           raise RequestError.new(result.errors)
