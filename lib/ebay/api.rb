@@ -122,7 +122,9 @@ module Ebay #:nodoc:
       
       request = request_class.new(params)
       yield request if block_given?
-      invoke(request, format)
+      response=invoke(request, format)
+      p response
+      response
     end
     
     def invoke(request, format)
@@ -130,8 +132,6 @@ module Ebay #:nodoc:
                                   build_body(request), 
                                   build_headers(request.call_name)
                                 )
-      p response.body
-      
       parse decompress(response), format
     end
 
