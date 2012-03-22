@@ -199,7 +199,7 @@ module Ebay # :nodoc:
       object_node :seller, 'Seller', :class => User, :optional => true
       object_node :selling_status, 'SellingStatus', :class => SellingStatus, :optional => true
       object_node :shipping_details, 'ShippingDetails', :class => ShippingDetails, :optional => true
-      text_node :ship_to_locations, 'ShipToLocations', :optional => true
+      value_array_node :ship_to_locations, 'ShipToLocations', :optional => true
       text_node :site, 'Site', :optional => true
       money_node :start_price, 'StartPrice', :optional => true
       object_node :storefront, 'Storefront', :class => Storefront, :optional => true
