@@ -10,7 +10,7 @@ module Ebay
 
     def self.find_by_keyword(params)
       params.merge!({:call_name=>"findItemsByKeywords"})
-      parse_response(get(Finding.build_call(params),: =>{:keywords=>params[:keywords]}))
+      parse_response(get(Finding.build_call(params),:query=>{:keywords=>params[:keywords]}))
     end
     
     def self.find_by_category(params)
