@@ -37,6 +37,7 @@ module Ebay
     def self.build_call(params)
       call_params="&SECURITY-APPNAME=#{Ebay::Api.app_id}&GLOBAL-ID=#{params[:global_id]}&OPERATION-NAME=#{params[:call_name]}&paginationInput.pageNumber=#{params[:page_number]}&itemFilter(0).name=ListingType&itemFilter(0).value(0)=#{params[:listing_type]}"
       call_params=call_params+"&buyerPostalCode=75001&itemFilter.name=MaxDistance&itemFilter.value=8000" if params[:listing_type]=="Classified" 
+      puts "Call_params=#{call_params}"
       call_params
     end
     
